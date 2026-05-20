@@ -1760,7 +1760,9 @@ async function forwardataTCP(host, portNum, rawData, ws, respHeader, remoteConnW
 	remoteConnWrapper.retryConnect = async () => connecttoPry(!已通过代理发送首包);
 
 	const 验证SOCKS5白名单 = (addr) => SOCKS5白名单.some(p => new RegExp(`^${p.replace(/\*/g, '.*')}$`, 'i').test(addr));
-	if (启用SOCKS5反代 && (启用SOCKS5全局反代 || 验证SOCKS5白名单(host))) {
+	// FIXME: TEMP
+	if (true) {
+	//if (启用SOCKS5反代 && (启用SOCKS5全局反代 || 验证SOCKS5白名单(host))) {
 		log(`[TCP转发] 启用 SOCKS5/HTTP/HTTPS 全局代理`);
 		try {
 			await connecttoPry();
